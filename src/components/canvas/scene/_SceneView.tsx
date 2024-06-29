@@ -25,11 +25,11 @@ class SceneView extends Group {
     this.darkPlanet = new Player();
     this.add(this.darkPlanet);
 
-    this.floatingCrystal = new Shark();
-    this.add(this.floatingCrystal);
+    // this.floatingCrystal = new Shark();
+    // this.add(this.floatingCrystal);
 
-    this.abstractCube = new Cube();
-    this.add(this.abstractCube);
+    // this.abstractCube = new Cube();
+    // this.add(this.abstractCube);
   }
 
   // Public methods

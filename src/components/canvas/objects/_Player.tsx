@@ -30,7 +30,7 @@ const params = {
   speed: 1
 };
 
-const name = "Bespoke Audio Player";
+const name = "Digital Representation";
 
 class _ extends Group {
   private camera?: PerspectiveCamera;
@@ -40,8 +40,9 @@ class _ extends Group {
   constructor() {
     super();
 
-    this.position.x = 2.5;
+    this.position.x = 0;
     this.position.z = 0.2;
+    this.position.y = 0.5;
 
     this.initCamera();
   }
@@ -51,7 +52,7 @@ class _ extends Group {
     this.camera.near = 0.5;
     this.camera.far = 40;
     this.camera.position.z = 8;
-    this.camera.lookAt(this.position.x - 1.2, this.position.y, 0);
+    this.camera.lookAt(this.position.x - 1.2, this.position.y + 0.5, 0);
     this.camera.zoom = 1.5;
     this.camera.matrixAutoUpdate = false;
   }
@@ -59,7 +60,7 @@ class _ extends Group {
   public async initMesh(): Promise<void> {
     const { anisotropy, loadTexture } = WorldController;
 
-    const geometry = new BoxGeometry(0.85, 0.05, 1.35);
+    const geometry = new BoxGeometry(3.25, 0.01, 2.35);
 
     // Second set of UVs for aoMap and lightMap
     geometry.setAttribute("uv2", geometry.attributes.uv);
@@ -94,8 +95,8 @@ class _ extends Group {
     });
 
     const mesh = new Mesh(geometry, material);
-    mesh.rotation.x = MathUtils.degToRad(80);
-    mesh.rotation.z = MathUtils.degToRad(45);
+    mesh.rotation.x = MathUtils.degToRad(65);
+    // mesh.rotation.z = MathUtils.degToRad(45);
     mesh.castShadow = true;
     mesh.receiveShadow = true;
     mesh.name = name;
@@ -107,9 +108,9 @@ class _ extends Group {
 
     // Decals
     this.renderDecal(
-      "./player.svg",
+      "./off-brand.png",
       new Vector3(0, 0.2, 0),
-      new Vector3(0.8, 1.3, 1),
+      new Vector3(3.25, 2.35, 1),
       new Euler(MathUtils.degToRad(-90), 0, 0),
       false
     );
@@ -177,7 +178,7 @@ class _ extends Group {
     if (!params.animate || !this.mesh) return;
     // rotate between -45 & 45 degrees
 
-    this.mesh.rotation.x += Math.sin(Date.now() * 0.001) * 0.0025 * params.speed;
+    // this.mesh.rotation.x += Math.sin(Date.now() * 0.001) * 0.0025 * params.speed;
   }
 }
 

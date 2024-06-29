@@ -149,7 +149,8 @@ class CameraController {
     }
 
     this.mouse.x = (clientX / document.documentElement.clientWidth) * 2 - 1;
-    this.mouse.y = 0.75 - (clientY / document.documentElement.clientHeight) * 1.25;
+    // this.mouse.y = 0.75 - (clientY / document.documentElement.clientHeight) * 1.25;
+    this.mouse.y = 0.75 - 1.25;
   };
 
   static onPointerUp = (e: PointerEvent) => {

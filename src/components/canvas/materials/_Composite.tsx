@@ -18,7 +18,7 @@ class _ extends RawShaderMaterial {
     uFocus: { value: 0.5 },
     uRotation: { value: 0 },
     uBluriness: { value: 1 },
-    uDistortion: { value: 10 }
+    uDistortion: { value: 0 }
   };
   constructor() {
     super({
@@ -28,7 +28,7 @@ class _ extends RawShaderMaterial {
         uFocus: { value: 0.5 },
         uRotation: { value: 0 },
         uBluriness: { value: 1 },
-        uDistortion: { value: 10 }
+        uDistortion: { value: 0 }
       },
       vertexShader: /* glsl */ `
                 in vec3 position;
